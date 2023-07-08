@@ -177,9 +177,11 @@ do
      echo " ";;
 
    9)clear
-     echo -e "Create backups\n"
+     echo -e "<<<< Create backups >>>>\n"
      storelocation=$(pwd)
      mkdir $storelocation/passkeyBackup
+     clear
+     echo -e "<<<< Create backups >>>>\n"
      cp -r /etc/.securepass/*  $storelocation/passkeyBackup
      echo -e "Backup Complete\n"
      echo " ";;
