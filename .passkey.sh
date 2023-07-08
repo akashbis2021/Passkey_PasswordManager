@@ -177,16 +177,18 @@ do
      echo " ";;
 
    9)clear
-     echo -e "Create backups"
+     echo -e "Create backups\n"
      storelocation=$(pwd)
-     mkdir passkeyBackup
+     mkdir $storelocation/passkeyBackup
      cp -r /etc/.securepass/*  $storelocation/passkeyBackup
+     echo -e "Backup Complete\n"
      echo " ";;
 
    10)clear
       echo -e "Restore"
-      RecentLocation=$(pwd)
-      cp -r $RecentLocation/passkeyBackup/* /etc/.securepass
+      read -p "Enter Restored File Path:" RecentLocation
+      cp -r $RecentLocation/* /etc/.securepass
+      echo -e "Restore Complete"
       echo " ";;
 
    .)clear
@@ -203,7 +205,7 @@ esac
      # MENU SECTION
      echo " "
      echo "========================="
-     echo "|      PassVault🔒      |"
+     echo "|      PassVault🔒       |"
      echo "|1.  Create Database     |"
      echo "|2.  Add Entry           |"
      echo "|3.  Show All Database   |"
