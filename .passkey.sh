@@ -106,9 +106,10 @@ do
      if [ -d "$checkshowentry" ]
      then
      showentries=$(ls /etc/.securepass/$showentry)
-     echo $showentry
+     echo -e "<<<< Show All Entries >>>>\n"
+     echo "Database: "$showentry
      echo "|"
-     echo "|_ _ "$showentries
+     echo "|_ _ ""Entries: "$showentries
      else
         echo "Database Not Found !! ⛔"
      fi
