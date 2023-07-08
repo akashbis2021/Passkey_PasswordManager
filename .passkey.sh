@@ -187,10 +187,10 @@ do
      echo " ";;
 
    10)clear
-      echo -e "Restore"
-      read -p "Enter Restored File Path:" RecentLocation
-      cp -r $RecentLocation/* /etc/.securepass
-      echo -e "Restore Complete"
+      echo -e "Restore\n"
+      read -p "Enter Backups File Path:" restoreLocation
+      cp -r $restoreLocation/* /etc/.securepass
+      echo -e "Restore Complete\n"
       echo " ";;
 
    .)clear
