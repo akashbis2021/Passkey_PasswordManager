@@ -44,8 +44,8 @@ do
      echo " |"
      echo -e " |_ _ " $databaselist"\n"
 
-     read -p "Set Database:" database
-     read -p "Entry Name:" entryname
+     read -p "Set Database: " database
+     read -p "Create Entry: " entryname
      sudo touch /etc/.securepass/$database/$entryname; sudo chmod 600 /etc/.securepass/$database/$entryname; sudo chown -R $username:$username /etc/.securepass/$database/$entryname
 
      # ENTRY DETAILS SECTION
