@@ -7,7 +7,7 @@ clear
 # MENU SECTION
 echo " "
 echo "=========================="
-echo "|      PassVault🔒       |"
+echo "|        PassKey🔒       |"
 echo "|1.  Create Database     |"
 echo "|2.  Add Entry           |"
 echo "|3.  Show All Database   |"
@@ -215,8 +215,8 @@ esac
 
      # MENU SECTION
      echo " "
-     echo "========================="
-     echo "|      PassVault🔒       |"
+     echo "=========================="
+     echo "|        PassKey🔒       |"
      echo "|1.  Create Database     |"
      echo "|2.  Add Entry           |"
      echo "|3.  Show All Database   |"
