@@ -101,6 +101,7 @@ do
    4)clear
      echo -e "<<<< Show All Entries >>>>\n"
      read -p "Set database: " showentry
+     echo " "
      checkshowentry="/etc/.securepass/$showentry"
      if [ -d "$checkshowentry" ]
      then
