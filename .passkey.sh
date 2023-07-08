@@ -190,9 +190,15 @@ do
 
    10)clear
       echo -e "<<<< Restore >>>>\n"
-      read -p "Enter Backups File Path:" restoreLocation
-      cp -r $restoreLocation/* /etc/.securepass
-      echo -e "Restore Complete\n"
+      read -p "Enter Backups File Path:" restorelocation
+      checkstore="$restorelocation\passkeyBackup"  
+      if [ -d "checkrestore" ]
+      then
+         cp -r $restorelocation/passkeyBackup/* /etc/.securepass
+          echo -e "Restore Complete\n" 
+      else
+         echo "Wrong Location ⛔"
+      fi   
       echo " ";;
 
    .)clear
