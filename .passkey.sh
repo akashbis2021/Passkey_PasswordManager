@@ -187,7 +187,7 @@ do
       echo -e "Restore"
       RecentLocation=$(pwd)
       cp -r $RecentLocation/passkeyBackup/* /etc/.securepass
-      echo "";;
+      echo " ";;
 
    .)clear
      echo "Quit-module"
