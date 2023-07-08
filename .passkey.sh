@@ -189,7 +189,7 @@ do
      echo " ";;
 
    10)clear
-      echo -e "Restore\n"
+      echo -e "<<<< Restore >>>>\n"
       read -p "Enter Backups File Path:" restoreLocation
       cp -r $restoreLocation/* /etc/.securepass
       echo -e "Restore Complete\n"
