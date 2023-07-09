@@ -34,9 +34,11 @@ do
      echo -e "<<<< Create Database >>>>\n"
      read -p "Enter_Database_Name: " database
      sudo mkdir /etc/.securepass/$database; sudo chown -R  $username:$username /etc/.securepass/$database
+
      echo " ";;
 
    2)clear
+     owner=$(whoami)
      databaselist=$(ls /etc/.securepass)
      echo -e "<<<< Add Entry >>>>\n"
 
@@ -46,13 +48,16 @@ do
 
      read -p "Set Database: " database
      read -p "Create Entry: " entryname
-     sudo touch /etc/.securepass/$database/$entryname; sudo chmod 600 /etc/.securepass/$database/$entryname; sudo chown -R $username:$username /etc/.securepass/$database/$entryname
+     sudo touch /etc/.securepass/$database/$entryname; sudo chmod 600 /etc/.securepass/$database/$entryname; sudo chown -R $owner:$owner /etc/.securepass/$database/$entryname
 
      # ENTRY DETAILS SECTION
      read -p "Title:" title
      read -p "Username:" username
      read -p "Url:" url
 
+     echo -e "\nTITLE:    "$title >> /etc/.securepass/$database/$entryname
+     echo "USERNAME: "$username >> /etc/.securepass/$database/$entryname
+     echo "URL:      "$url >> /etc/.securepass/$database/$entryname
 
      # PASSWORD GENERATING SECTION
 
@@ -71,22 +76,20 @@ do
      if [ $save == "y" ]
      then
      storepass=$(echo "$store" | tr -d ' ')
+     echo "Password: "$storepass >> /etc/.securepass/$database/$entryname
      echo  " "
      else
         echo ""
      fi
      else
       read -p "Enter Password Manually:" password
-      printf "Password: $password" >> /etc/.securepass/$database/$entryname
+      echo "Password: $password" >> /etc/.securepass/$database/$entryname
       echo " "
      fi
 
     # INPUT ALL DETAILS IN THE ENTRY
 
-     echo -e "\nTITLE:    "$title >> /etc/.securepass/$database/$entryname
-     echo "USERNAME: "$username >> /etc/.securepass/$database/$entryname
-     echo "URL:      "$url >> /etc/.securepass/$database/$entryname
-     echo "Password: "$storepass >> /etc/.securepass/$database/$entryname
+     #echo "Password: $storepass >> /etc/.securepass/$database/$entryname
      echo " ";;
 
    3)clear
